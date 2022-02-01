@@ -1,2 +1,5 @@
-print("Welcome to Jarvis Program")
-print("Some Changes")
+def main():
+    print("Welcome to Jarvis Program")
+
+if __name__ == "__main__":
+    main()
