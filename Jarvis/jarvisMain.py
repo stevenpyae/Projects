@@ -7,7 +7,7 @@ def main():
     #Initialise the Jarvis program
     engine = pyttsx3.init()
     engine.setProperty('rate', 145)
-    engine.say("Welcome to Jarvis Program")
+    engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
 
     #Initialise Listening
     recognizer = speech_recognition.Recognizer()
@@ -17,7 +17,16 @@ def main():
         audio = recognizer.listen(source)
     
     #Recognize speech using Google Speech Recognition
-    print(recognizer.recognize_google(audio))
+    words = recognizer.recognize_google(audio)
+
+    matches = re.search("Friday", words)
+    if matches:
+        engine.say("Yes Sir!, I am listening")
+        engine.runAndWait()
+    else:
+        engine.say("It is good to see you work Sir")
+        engine.runAndWait()
+
     
 
 if __name__ == "__main__":
