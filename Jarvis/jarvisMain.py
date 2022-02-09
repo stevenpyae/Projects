@@ -1,6 +1,6 @@
 import re
 import pyttsx3
-import speech_recognition
+from Classes import friday
 
 def main():
     print("Welcome to Jarvis Program")
@@ -9,16 +9,8 @@ def main():
     engine.setProperty('rate', 145)
     engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
 
-    #Initialise Listening
-    recognizer = speech_recognition.Recognizer()
-    with speech_recognition.Microphone() as source:
-        print("Jarvis is Listening: ")
-        recognizer.adjust_for_ambient_noise(source)
-        audio = recognizer.listen(source)
-    
-    #Recognize speech using Google Speech Recognition
-    words = recognizer.recognize_google(audio)
-
+    fridayInstance = friday()
+    words = fridayInstance.listen()
     matches = re.search("Friday", words)
     if matches:
         engine.say("Yes Sir!, I am listening")
