@@ -9,9 +9,10 @@ def main():
     engine.setProperty('rate', 145)
     engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
 
-    fridayInstance = friday()
+    fridayInstance = friday.Friday()
     words = fridayInstance.listen()
     matches = re.search("Friday", words)
+
     if matches:
         engine.say("Yes Sir!, I am listening")
         engine.runAndWait()
@@ -19,7 +20,6 @@ def main():
         engine.say("It is good to see you work Sir")
         engine.runAndWait()
 
-    
 
 if __name__ == "__main__":
     main()
