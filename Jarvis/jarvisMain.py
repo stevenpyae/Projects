@@ -16,6 +16,7 @@ def main():
     if matches:
         engine.say("Yes Sir!, I am listening")
         engine.runAndWait()
+        newwords = fridayInstance.listen()
     else:
         engine.say("It is good to see you work Sir")
         engine.runAndWait()

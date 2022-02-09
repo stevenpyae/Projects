@@ -12,6 +12,6 @@ class Friday:
             audio = self.recognizer.listen(source)
         #Recognize speech using Google Speech Recognition
         words = self.recognizer.recognize_google(audio)
-
+        
         print(words)
         return words
