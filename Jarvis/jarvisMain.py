@@ -28,6 +28,9 @@ def main():
     if chromeInstance:
         engine.say("Launching Chrome for you sir")
         engine.runAndWait()
+    else:
+        engine.say("I shall wait for your next instructions")
+        engine.runAndWait()
     
 if __name__ == "__main__":
     main()
