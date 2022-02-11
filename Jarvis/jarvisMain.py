@@ -23,6 +23,11 @@ def main():
         engine.say("It is good to see you work Sir")
         engine.runAndWait()
 
+    chromeInstance = re.search("Chrome", newwords)
 
+    if chromeInstance:
+        engine.say("Launching Chrome for you sir")
+        engine.runAndWait()
+    
 if __name__ == "__main__":
     main()
